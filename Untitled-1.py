@@ -7,6 +7,9 @@ You can view the license at: https://creativecommons.org/licenses/by-nc/4.0/
 import socket
 from colorama import init, Fore
 from scapy.all import ARP, Ether, srp
+import platform
+import subprocess
+import os
 init()
 GREEN = Fore.GREEN
 RESET = Fore.RESET
@@ -32,6 +35,7 @@ while True:
     print("Options:")
     print("     1. Scan For Open Ports")
     print("     2. Scan For Devices")
+    print("     3. Test Connection")
     a = input("Option: $ ")
     print("")
     if a == "1":
@@ -60,3 +64,12 @@ while True:
         for client in clients:
             print("{:16}    {}".format(client['ip'], client['mac']))
         print("") 
+    elif a == "3":
+        param = '-n' if os.sys.platform.lower()=='win32' else '-c'
+        hostname = input("Enter host: ")
+        response = os.system(f"ping {param} 1 {hostname}")
+        if response == 0:
+            print(f"{hostname} is up!")
+        else:
+            print(f"{hostname} is down!")
+        print(" ")
