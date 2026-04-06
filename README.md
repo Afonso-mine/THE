@@ -15,18 +15,6 @@ Features
 
 ---
 
-Project Structure
-
-THE/
-├── setup.py            # Full initializer
-├── python/             # Python interface and utilities
-├── rust/               # Rust project for fast port scanning
-├── bin/                # Compiled Rust binary (scanner/scanner.exe)
-├── config.json         # Configuration (port ranges, timeouts)
-└── .gitignore          # Ignore cache, binaries, and build artifacts
-
----
-
 Setup
 
 1. Clone or download the repository
