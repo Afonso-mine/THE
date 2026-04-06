@@ -1,0 +1,4 @@
+{
+  "default_ports": [1, 1024],
+  "timeout_ms": 1250
+}
